@@ -1,0 +1,252 @@
+{% extends "base.html" %} 
+{% block content %}
+<div class='box'>  
+    <table>
+        <tr>
+          <td>  
+            <form action="{{ url_for('recommendations') }}" method="post">  
+              <input type="hidden" name="ticker" value='EURUSD'>
+              <button type="submit" class="btn btn-primary btn-block btn-large">EURUSD</button>
+            </form>
+          </td>
+          <td>
+            <form action="{{ url_for('recommendations') }}" method="post">  
+              <input type="hidden" name="ticker" value='EURGBP'>
+              <button type="submit" class="btn btn-primary btn-block btn-large">EURGBP</button>
+            </form>
+          </td>
+          <td>
+            <form action="{{ url_for('recommendations') }}" method="post">  
+              <input type="hidden" name="ticker" value='EURJPY'>
+              <button type="submit" class="btn btn-primary btn-block btn-large">EURJPY</button>
+            </form>
+          </td>
+          <td>
+            <form action="{{ url_for('recommendations') }}" method="post">  
+              <input type="hidden" name="ticker" value='EURCHF'>
+              <button type="submit" class="btn btn-primary btn-block btn-large">EURCHF</button>
+            </form>
+          </td>
+          <td>
+            <form action="{{ url_for('recommendations') }}" method="post">  
+              <input type="hidden" name="ticker" value='EURAUD'>
+              <button type="submit" class="btn btn-primary btn-block btn-large">EURAUD</button>
+            </form>
+          </td>
+        </tr>
+        <tr>
+          <td>  
+            <form action="{{ url_for('recommendations') }}" method="post">  
+              <input type="hidden" name="ticker" value='EURCAD'>
+              <button type="submit" class="btn btn-primary btn-block btn-large">EURCAD</button>
+            </form>
+          </td>
+          <td>
+            <form action="{{ url_for('recommendations') }}" method="post">  
+              <input type="hidden" name="ticker" value='USDJPY'>
+              <button type="submit" class="btn btn-primary btn-block btn-large">USDJPY</button>
+            </form>
+          </td>
+          <td>
+            <form action="{{ url_for('recommendations') }}" method="post">  
+              <input type="hidden" name="ticker" value='USDCAD'>
+              <button type="submit" class="btn btn-primary btn-block btn-large">USDCAD</button>
+            </form>
+          </td>
+          <td>
+            <form action="{{ url_for('recommendations') }}" method="post">  
+              <input type="hidden" name="ticker" value='USDCHF'>
+              <button type="submit" class="btn btn-primary btn-block btn-large">USDCHF</button>
+            </form>
+          </td>
+          <td>
+            <form action="{{ url_for('recommendations') }}" method="post">  
+              <input type="hidden" name="ticker" value='GBPUSD'>
+              <button type="submit" class="btn btn-primary btn-block btn-large">GBPUSD</button>
+            </form>
+          </td>
+        </tr>
+        <tr>
+          <td>  
+            <form action="{{ url_for('recommendations') }}" method="post">  
+              <input type="hidden" name="ticker" value='GBPJPY'>
+              <button type="submit" class="btn btn-primary btn-block btn-large">GBPJPY</button>
+            </form>
+          </td>
+          <td>
+            <form action="{{ url_for('recommendations') }}" method="post">  
+              <input type="hidden" name="ticker" value='GBPCAD'>
+              <button type="submit" class="btn btn-primary btn-block btn-large">GBPCAD</button>
+            </form>
+          </td>
+          <td>
+            <form action="{{ url_for('recommendations') }}" method="post">  
+              <input type="hidden" name="ticker" value='CADCHF'>
+              <button type="submit" class="btn btn-primary btn-block btn-large">CADCHF</button>
+            </form>
+          </td>
+          <td>
+            <form action="{{ url_for('recommendations') }}" method="post">  
+              <input type="hidden" name="ticker" value='CHFJPY'>
+              <button type="submit" class="btn btn-primary btn-block btn-large">CHFJPY</button>
+            </form>
+          </td>
+          <td>
+            <form action="{{ url_for('recommendations') }}" method="post">  
+              <input type="hidden" name="ticker" value='AUDUSD'>
+              <button type="submit" class="btn btn-primary btn-block btn-large">AUDUSD</button>
+            </form>
+          </td>
+        </tr>
+        <tr>
+          <td>  
+            <form action="{{ url_for('recommendations') }}" method="post">  
+              <input type="hidden" name="ticker" value='AUDCAD'>
+              <button type="submit" class="btn btn-primary btn-block btn-large">AUDCAD</button>
+            </form>
+          </td>
+          <td>
+            <form action="{{ url_for('recommendations') }}" method="post">  
+              <input type="hidden" name="ticker" value='AUDJPY'>
+              <button type="submit" class="btn btn-primary btn-block btn-large">AUDJPY</button>
+            </form>
+          </td>
+          <td>
+            <form action="{{ url_for('recommendations') }}" method="post">  
+              <input type="hidden" name="ticker" value='AUDCHF'>
+              <button type="submit" class="btn btn-primary btn-block btn-large">AUDCHF</button>
+            </form>
+          </td>
+          <td>
+            <form action="{{ url_for('recommendations') }}" method="post">  
+              <input type="hidden" name="ticker" value='NZDJPY'>
+              <button type="submit" class="btn btn-primary btn-block btn-large">NZDJPY</button>
+            </form>
+          </td>
+          <td>
+            <form action="{{ url_for('recommendations') }}" method="post">  
+              <input type="hidden" name="ticker" value='EURAUD'>
+              <button type="submit" class="btn btn-primary btn-block btn-large">--</button>
+            </form>
+          </td>
+        </tr>
+    </table>
+
+  {% if ticker %}
+  <h2>{{ ticker }}</h2>
+<!-- TradingView Widget BEGIN -->
+<div class="tradingview-widget-container" style="height:100%;width:100%">
+  <div id="tradingview_ba8bc" style="height:calc(100% - 32px);width:100%"></div>
+  <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/" rel="noopener nofollow" target="_blank"><span class="blue-text">Track all markets on TradingView</span></a></div>
+  <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+  <script type="text/javascript">
+  new TradingView.widget(
+  {
+  "autosize": true,
+  "symbol": "OANDA:EURUSD",
+  "interval": "D",
+  "timezone": "Etc/UTC",
+  "theme": "dark",
+  "style": "1",
+  "locale": "en",
+  "enable_publishing": false,
+  "withdateranges": true,
+  "hide_side_toolbar": false,
+  "allow_symbol_change": true,
+  "studies": [
+    "STD;Bollinger_Bands",
+    "STD;SMA",
+    "STD;Stochastic"
+  ],
+  "container_id": "tradingview_ba8bc"
+}
+  );
+  </script>
+</div>
+<!-- TradingView Widget END -->
+  <table border=2 id='rectable'>
+    <thead>
+      <td>Interval</td>
+      <td>Recommendation</td>
+      <td>Number of BUY indicators</td>
+      <td>Number of SELL indicators</td>
+      <td>Number of Neutral Indicators</td>
+    </thead>
+    <tr>
+      <td>1 minute</td>
+      <td>{{ analysis['1m']['RECOMMENDATION'] }}</td>
+      <td>{{ analysis['1m']['BUY'] }}</td>
+      <td>{{ analysis['1m']['SELL'] }}</td>
+      <td>{{ analysis['1m']['NEUTRAL'] }}</td>
+    </tr>
+    <tr>
+      <td>5 minute</td>
+      <td>{{ analysis['5m']['RECOMMENDATION'] }}</td>
+      <td>{{ analysis['5m']['BUY'] }}</td>
+      <td>{{ analysis['5m']['SELL'] }}</td>
+      <td>{{ analysis['5m']['NEUTRAL'] }}</td>
+    </tr>
+    <tr>
+      <td>15 minute</td>
+      <td>{{ analysis['15m']['RECOMMENDATION'] }}</td>
+      <td>{{ analysis['15m']['BUY'] }}</td>
+      <td>{{ analysis['15m']['SELL'] }}</td>
+      <td>{{ analysis['15m']['NEUTRAL'] }}</td>
+    </tr>
+    <tr>
+      <td>30 minute</td>
+      <td>{{ analysis['30m']['RECOMMENDATION'] }}</td>
+      <td>{{ analysis['30m']['BUY'] }}</td>
+      <td>{{ analysis['30m']['SELL'] }}</td>
+      <td>{{ analysis['30m']['NEUTRAL'] }}</td>
+    </tr>
+    <tr>
+      <td>1 hour</td>
+      <td>{{ analysis['1h']['RECOMMENDATION'] }}</td>
+      <td>{{ analysis['1h']['BUY'] }}</td>
+      <td>{{ analysis['1h']['SELL'] }}</td>
+      <td>{{ analysis['1h']['NEUTRAL'] }}</td>
+    </tr>
+    <tr>
+      <td>2 hours</td>
+      <td>{{ analysis['2h']['RECOMMENDATION'] }}</td>
+      <td>{{ analysis['2h']['BUY'] }}</td>
+      <td>{{ analysis['2h']['SELL'] }}</td>
+      <td>{{ analysis['2h']['NEUTRAL'] }}</td>
+    </tr>
+    <tr>
+      <td>4 hours</td>
+      <td>{{ analysis['4h']['RECOMMENDATION'] }}</td>
+      <td>{{ analysis['4h']['BUY'] }}</td>
+      <td>{{ analysis['4h']['SELL'] }}</td>
+      <td>{{ analysis['4h']['NEUTRAL'] }}</td>
+    </tr>
+    <tr>
+      <td>1 day</td>
+      <td>{{ analysis['1d']['RECOMMENDATION'] }}</td>
+      <td>{{ analysis['1d']['BUY'] }}</td>
+      <td>{{ analysis['1d']['SELL'] }}</td>
+      <td>{{ analysis['1d']['NEUTRAL'] }}</td>
+    </tr>
+    <tr>
+      <td>1 week</td>
+      <td>{{ analysis['1W']['RECOMMENDATION'] }}</td>
+      <td>{{ analysis['1W']['BUY'] }}</td>
+      <td>{{ analysis['1W']['SELL'] }}</td>
+      <td>{{ analysis['1W']['NEUTRAL'] }}</td>
+    </tr>
+    <tr>
+      <td>1 month</td>
+      <td>{{ analysis['1M']['RECOMMENDATION'] }}</td>
+      <td>{{ analysis['1M']['BUY'] }}</td>
+      <td>{{ analysis['1M']['SELL'] }}</td>
+      <td>{{ analysis['1M']['NEUTRAL'] }}</td>
+    </tr>
+
+  </table>
+  
+  {% endif %}
+  
+</div>
+
+{% endblock %}
